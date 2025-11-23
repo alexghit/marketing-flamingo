@@ -11,8 +11,9 @@ function loadJS(file) {
 // Auto-load all files in /src
 const files = [
   "lang-switch.js",
-  "lang-switch.js",
-  "btn-txt-anim.js",
+  "btn-animate.css",
+  "btn-animate.js",
+  "loader.js",
 ];
 
 files.forEach(file => loadJS(file));
