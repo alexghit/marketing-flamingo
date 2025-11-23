@@ -1,31 +1,20 @@
-const base = "https://cdn.jsdelivr.net/gh/AlexGhit/marketing-flamingo";
+const base = "https://cdn.jsdelivr.net/gh/alexghit/marketing-flamingo/src/";
 
-// Load JS
+// Load JS file
 function loadJS(file) {
   const s = document.createElement("script");
-  s.src = `${base}/src/${file}`;
+  s.src = base + file;
   s.defer = true;
   document.body.appendChild(s);
 }
 
-// Load CSS
-function loadCSS(file) {
-  const l = document.createElement("link");
-  l.rel = "stylesheet";
-  l.href = `${base}/src/${file}`;
-  document.head.appendChild(l);
-}
+// Add your JS files here
+const files = [
+  "lang-switch.js",
+  "btn-animate.js",
+  // "file3.js",
+  // "file4.js"
+];
 
-// CSS first
-loadCSS("btn-animate.css");
-
-// Load libraries BEFORE custom scripts
-loadJS("libs/gsap.min.js");
-loadJS("libs/CustomEase.min.js");
-loadJS("libs/SplitText.min.js");
-
-// Load animations
-loadJS("btn-animate.js");
-
-// Load other scripts
-loadJS("lang-switch.js");
+// Load them
+files.forEach(loadJS);
